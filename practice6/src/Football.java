@@ -21,13 +21,13 @@ public class Football extends JFrame implements ActionListener {
         buttonPanel.setPreferredSize(new Dimension(400, 200));
         buttonPanel.setLayout(new GridLayout(1, 2));
 
-        JButton milanButton = new JButton("FC Barcelona");
+        JButton milanButton = new JButton("AC Milan");
         milanButton.setForeground(Color.MAGENTA);
         milanButton.setPreferredSize(new Dimension(100, 100));
         milanButton.addActionListener(this);
         buttonPanel.add(milanButton);
 
-        JButton madridButton = new JButton("FC Spartak");
+        JButton madridButton = new JButton("Real Madrid");
         madridButton.setForeground(Color.RED);
         madridButton.setBackground(Color.GRAY);
         madridButton.setPreferredSize(new Dimension(100, 100));
@@ -53,22 +53,22 @@ public class Football extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent dodya) {
-        String command = dodya.getActionCommand();
+    public void actionPerformed(ActionEvent act) {
+        String command = act.getActionCommand();
 
-        if (command == "FC Barcelona") {
+        if (command == "AC Milan") {
             milsc++;
-            lastsc.setText("Last Scorer: FC Barcelona");
-        } else if (command == "FC Spartak"){
+            lastsc.setText("Last Scorer: AC Milan");
+        } else if (command == "Real Madrid"){
             madrsc++;
-            lastsc.setText("Last Scorer: FC Spartak");
+            lastsc.setText("Last Scorer: Real Madrid");
         }
 
         result.setText("Result: " + milsc + " X " + madrsc);
         if (milsc > madrsc) {
-            winner.setText("Winner: FC Barcelona");
+            winner.setText("Winner: AC Milan");
         } else if (milsc < madrsc) {
-            winner.setText("Winner: FC Spartak");
+            winner.setText("Winner: Real Madrid");
         } else {
             winner.setText("Winner: DRAW");
         }
